@@ -1,0 +1,17 @@
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\bin\Debug\net6.0\PizzaTIC.App.Persistencia.deps.json
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\bin\Debug\net6.0\PizzaTIC.App.Persistencia.runtimeconfig.json
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\bin\Debug\net6.0\PizzaTIC.App.Persistencia.dll
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\bin\Debug\net6.0\PizzaTIC.App.Persistencia.pdb
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\bin\Debug\net6.0\PizzaTIC.App.Dominio.dll
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\bin\Debug\net6.0\PizzaTIC.App.Dominio.pdb
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.csproj.AssemblyReference.cache
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.AssemblyInfoInputs.cache
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.AssemblyInfo.cs
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.csproj.CoreCompileInputs.cache
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.csproj.CopyComplete
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.dll
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\refint\PizzaTIC.App.Persistencia.dll
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.pdb
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\PizzaTIC.App.Persistencia.genruntimeconfig.cache
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Persistencia\obj\Debug\net6.0\ref\PizzaTIC.App.Persistencia.dll

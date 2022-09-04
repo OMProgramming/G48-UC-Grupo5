@@ -1,0 +1,12 @@
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\PizzaTIC.App.Dominio.csproj.AssemblyReference.cache
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\PizzaTIC.App.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\PizzaTIC.App.Dominio.AssemblyInfoInputs.cache
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\PizzaTIC.App.Dominio.AssemblyInfo.cs
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\PizzaTIC.App.Dominio.csproj.CoreCompileInputs.cache
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\bin\Debug\net6.0\PizzaTIC.App.Dominio.deps.json
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\bin\Debug\net6.0\PizzaTIC.App.Dominio.dll
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\bin\Debug\net6.0\PizzaTIC.App.Dominio.pdb
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\PizzaTIC.App.Dominio.dll
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\refint\PizzaTIC.App.Dominio.dll
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\PizzaTIC.App.Dominio.pdb
+C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Dominio\obj\Debug\net6.0\ref\PizzaTIC.App.Dominio.dll
