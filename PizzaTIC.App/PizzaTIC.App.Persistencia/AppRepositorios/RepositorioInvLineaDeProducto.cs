@@ -9,16 +9,19 @@ namespace PizzaTIC.App.Persistencia
         ///<summary>
         ///Referencia al Contexto de InvLineaDeProducto
         ///</summary>
-        private readonly AppContext _appContext;
+        //private readonly AppContext _appContext;
+        private readonly AppContext _appContext = new AppContext();
         ///<summary>
         ///Metodo Constructor Utiliza
         ///Inyección de dependencias para indicar el contexto a utilizar
         ///</summary>
         ///<param name = "appContext"></param>//
+        /*
         public RepositorioInvLineaDeProducto(AppContext appContext)
         {
             _appContext = appContext;
         }
+        */
         /*method to Create a InvLineaDeProducto*/
         InvLineaDeProducto IRepositorioInvLineaDeProducto.CreateInvLineaDeProducto(InvLineaDeProducto invLineaDeProducto)
         {
@@ -27,10 +30,10 @@ namespace PizzaTIC.App.Persistencia
             return invLineaDeProductoAdicionado!.Entity;
         }
         /*method to Read InvLineaDeProducto*/
-        public InvLineaDeProducto ReadInvLineaDeProducto(int idInvLineaDeProducto)
+        public InvLineaDeProducto ReadInvLineaDeProducto(string InvLDPNombre)
         {
-            Console.WriteLine("InvLineaDeProducto= "+idInvLineaDeProducto);
-            var invLineaDeProducto = _appContext.InvLineaDeProductos!.FirstOrDefault(p => p.Id==idInvLineaDeProducto);
+            var invLineaDeProducto = _appContext.InvLineaDeProductos!.FirstOrDefault(p => p.INVLPNombre==InvLDPNombre);
+            Console.WriteLine("Id= "+invLineaDeProducto.Id+" InvLDPNombre= "+invLineaDeProducto.INVLPNombre);
             return invLineaDeProducto!; 
             
         }

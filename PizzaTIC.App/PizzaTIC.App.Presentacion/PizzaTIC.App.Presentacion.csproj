@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\PizzaTIC.App.Persistencia\PizzaTIC.App.Persistencia.csproj" />
+    <ProjectReference Include="..\PizzaTIC.App.Dominio\PizzaTIC.App.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="toastr" Version="2.1.1" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>

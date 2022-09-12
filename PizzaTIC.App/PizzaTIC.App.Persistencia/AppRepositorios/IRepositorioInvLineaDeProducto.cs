@@ -8,7 +8,7 @@ namespace PizzaTIC.App.Persistencia
     public interface IRepositorioInvLineaDeProducto
     {
         InvLineaDeProducto CreateInvLineaDeProducto(InvLineaDeProducto invLineaDeProducto);
-        InvLineaDeProducto ReadInvLineaDeProducto(int idInvLineaDeProducto);
+        InvLineaDeProducto ReadInvLineaDeProducto(string InvLDPNombre);
         IEnumerable<InvLineaDeProducto> ReadAllInvLineasDeProductos();
         InvLineaDeProducto UpdateInvLineaDeProducto(InvLineaDeProducto invLineaDeProducto);
         void DeleteInvLineaDeProducto(int idInvLineaDeProducto);

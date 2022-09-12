@@ -9,16 +9,18 @@ namespace PizzaTIC.App.Persistencia
         ///<summary>
         ///Referencia al Contexto de Pizza
         ///</summary>
-        private readonly AppContext _appContext;
+        private readonly AppContext _appContext = new AppContext();
         ///<summary>
         ///Metodo Constructor Utiliza
         ///Inyección de dependencias para indicar el contexto a utilizar
         ///</summary>
         ///<param name = "appContext"></param>//
+        /*
         public RepositorioPizza(AppContext appContext)
         {
             _appContext = appContext;
         }
+        */
         /*method to Create a Pizza*/
         Pizza IRepositorioPizza.CreatePizza(Pizza pizza)
         {

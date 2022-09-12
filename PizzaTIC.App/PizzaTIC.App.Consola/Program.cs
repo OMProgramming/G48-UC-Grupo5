@@ -11,7 +11,7 @@ namespace PizzaTIC.App.Consola
     {
         private static IRepositorioCliente _repoCliente = new RepositorioCliente(new Persistencia.AppContext());
         private static IRepositorioFormaDePago _repoFormaDePago = new RepositorioFormaDePago(new Persistencia.AppContext());
-        private static IRepositorioInvLineaDeProducto _repoInvLineaDeProducto = new RepositorioInvLineaDeProducto(new Persistencia.AppContext());
+        //private static IRepositorioInvLineaDeProducto _repoInvLineaDeProducto = new RepositorioInvLineaDeProducto(new Persistencia.AppContext());
         private static IRepositorioInvProducto _repoInvProducto = new RepositorioInvProducto(new Persistencia.AppContext());
         private static IRepositorioPizza _repoPizza = new RepositorioPizza(new Persistencia.AppContext());
         private static IRepositorioIngrediente _repoIngrediente = new RepositorioIngrediente(new Persistencia.AppContext());
@@ -21,16 +21,16 @@ namespace PizzaTIC.App.Consola
             Console.WriteLine("Hello, World Entity Framework!");
                 //CreateCliente();
                 //var ExistCliente = new Cliente();
-                //ExistCliente = ReadCliente(1);//stores ExistCliente with  Cliente clienteId=1
+                //ExistCliente = ReadCliente(2);//stores ExistCliente with  Cliente clienteId=1
                 //ReadAllClientes();
                 //var ExistformaDePago = new FormaDePago();
-                //ExistformaDePago = ReadFormaDePago(1);
-                /*
-                ExistCliente.formaDePago=ExistformaDePago;//set formaDePagoId=1 in db Table Cliente 
-                ExistCliente.Ciudad="Taparcal";
-                UpdateCliente(ExistCliente);
-                ExistCliente = ReadCliente(1);
-                */
+                //ExistformaDePago = ReadFormaDePago(3);
+                
+                //ExistCliente.formaDePago=ExistformaDePago;//set formaDePagoId=2 in db Table Cliente 
+                //ExistCliente.Ciudad="Taparcal";
+                //UpdateCliente(ExistCliente);
+                //ExistCliente = ReadCliente(2);
+                
                 //CreateFormaDePago();
                 
                 //var ExistformaDePago = new FormaDePago();
@@ -179,16 +179,16 @@ namespace PizzaTIC.App.Consola
         {
             var cliente = new Cliente
             {
-                UserName = "ClauGomez",
-                Password = "comidafresca22",
-                Nombres = "Claudia Marcela ",
-                Apellidos = "Gomez Lopez", 
-                Direccion = "Carrera 5 No 3-9",
+                UserName = "PLopez2022",
+                Password = "FavoritaPizza10",
+                Nombres = "Pedro Manuel",
+                Apellidos = "Lopez Torres", 
+                Direccion = "Calle 5 No 5-45",
                 Ciudad = "Pereira",
                 Departamento = "Risaralda",
                 Pais = "Colombia",
-                Telefono = "4001695",
-                Email = "claudia_lopez@gmail.com"
+                Telefono = "5643211",
+                Email = "pedro_lopez@gmail.com"
             };
             _repoCliente.CreateCliente(cliente);
         }
@@ -220,11 +220,11 @@ namespace PizzaTIC.App.Consola
         {
             var formaDePago = new FormaDePago
             {
-                TipoDeTarjeta = "Debito",
-                NombreEnTarjeta = "Marcela Lopez",
-                NumeroEnTarjeta = 867904578659,
-                FechaDeVencimiento = new DateTime(2026,12,01), 
-                CodigoDeSeguridad = "567"
+                TipoDeTarjeta = "Credito",
+                NombreEnTarjeta = "Pedro Lopez",
+                NumeroEnTarjeta = 457868679059,
+                FechaDeVencimiento = new DateTime(2028,11,05), 
+                CodigoDeSeguridad = "437"
             };
             _repoFormaDePago.CreateFormaDePago(formaDePago);
         }
@@ -252,8 +252,8 @@ namespace PizzaTIC.App.Consola
             _repoFormaDePago.DeleteFormaDePago(idFormaDePago);
         }
 
-
-         /*method to Create a InvLineaDeProducto*/
+        
+         /*method to Create a InvLineaDeProducto
         private static void CreateInvLineaDeProducto()
         {
             var invLineaDeProducto = new InvLineaDeProducto
@@ -263,30 +263,35 @@ namespace PizzaTIC.App.Consola
             };
             _repoInvLineaDeProducto.CreateInvLineaDeProducto(invLineaDeProducto);
         }
-        /*Method Read InvLineaDeProducto*/
+        */
+        /*Method Read InvLineaDeProducto
         private static InvLineaDeProducto ReadInvLineaDeProducto (int idInvLineaDeProducto)
         {
             var invLineaDeProducto = _repoInvLineaDeProducto.ReadInvLineaDeProducto(idInvLineaDeProducto);
             Console.WriteLine(invLineaDeProducto.INVLPCodigo +" "+ invLineaDeProducto.INVLPNombre);
             return invLineaDeProducto;
         }
-        /*Method Read InvLineasDeProductos*/
+        */
+
+        /*Method Read InvLineasDeProductos
         private static void ReadAllInvLineasDeProductos()
         {
             var invLineaDeProducto = _repoInvLineaDeProducto.ReadAllInvLineasDeProductos();
             Console.WriteLine(invLineaDeProducto);
         }
-        /*Method Update FormaDePago*/
+        */
+        /*Method Update FormaDePago
         private static void UpdateInvLineaDeProducto(InvLineaDeProducto invLineaDeProducto)
         {
             _repoInvLineaDeProducto.UpdateInvLineaDeProducto(invLineaDeProducto);
         }
-        /*Method Delete InvLineaDeProducto*/
+        */
+        /*Method Delete InvLineaDeProducto
         private static void DeleteInvLineaDeProducto (int idInvLineaDeProducto)
         {
             _repoInvLineaDeProducto.DeleteInvLineaDeProducto(idInvLineaDeProducto);
         }
-
+        */
 
          /*method to Create a InvProducto*/
         private static void CreateInvProducto()

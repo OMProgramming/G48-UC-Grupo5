@@ -8,7 +8,7 @@ namespace PizzaTIC.App.Persistencia
     public interface IRepositorioInvProducto
     {
         InvProducto CreateInvProducto(InvProducto invProducto);
-        InvProducto ReadInvProducto(int idInvProducto);
+        InvProducto ReadInvProducto(string InvProductoNombre);
         IEnumerable<InvProducto> ReadAllInvProductos();
         InvProducto UpdateInvProducto(InvProducto invInvProducto);
         void DeleteInvProducto(int idInvProducto);

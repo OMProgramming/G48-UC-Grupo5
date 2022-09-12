@@ -1,0 +1,76 @@
+﻿@page
+@model PizzaTIC.App.Presentacion.ProdDisponibleModel
+@{
+    ViewData["Title"] = "Productos Disponibles: " ;
+}
+<h1>@ViewData["Title"] @Model.title </h1>
+    <br/>
+@switch (Model.title)
+{
+    case "Pizza":
+        <div class="container row p-0 m-0">
+            <!--bootstrap divides a row into 12 equals columns
+                this div is creating 1 row into 2 columns 9 and 3 -->
+            <div class="col-9">
+                <h2 class="text-info">Lista de Pizzas</h2>
+            </div>
+            <div class="col-3">
+                <!--redirects to razor page named "ClienteCreate" when button is pressed-->
+                <a asp-page="PizzaCreate"class="btn btn-info form-control text-white">Crear un Pizza Nueva</a>
+            </div>    
+            <div class="col-12 border p-3 mt-3">
+                <form method="post">
+                    @if (Model.listPizzas.Count() > 0)
+                    {
+                        <table class="table table-striped border p-3 mt-3">
+                            <tr class="table-secondary">
+                                <th><!--tag helper asp-for-->
+                                    <label asp-for="listPizzas.FirstOrDefault().PizzaNombre"></label>
+                                </th>
+                                <th><!--tag helper asp-for-->
+                                    <label asp-for="listPizzas.FirstOrDefault().PizzaDescripcion"></label>
+                                </th>
+                                <th><!--tag helper asp-for-->
+                                    <label asp-for="listPizzas.FirstOrDefault().Combo"></label>
+                                </th>
+                                <th><!--tag helper asp-for-->
+                                    <label>Editar o Borrar</label>
+                                </th> 
+
+                            </tr>
+                            @foreach(var item in Model.listPizzas)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(m=>item.PizzaNombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(m=>item.PizzaDescripcion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(m=>item.Combo)
+                                    </td>
+                                    
+                                    <td>
+                                        <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                                        <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Esta seguro de Borrar esta Pizza?')" class="btn btn-danger btn-sm">Borrar</button>
+                                        <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                        <a asp-page="PizzaEdit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Editar</a>
+                                    </td>
+                                    
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <p>No hay Datos en La Base de Datos</p>
+                    }
+                </form>
+            </div>
+        </div>
+        break;
+
+
+        
+}

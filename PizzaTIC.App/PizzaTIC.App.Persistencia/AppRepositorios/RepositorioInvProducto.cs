@@ -27,10 +27,10 @@ namespace PizzaTIC.App.Persistencia
             return invProductoAdicionado!.Entity;
         }
         /*method to Read InvProducto*/
-        public InvProducto ReadInvProducto(int idInvProducto)
+        public InvProducto ReadInvProducto(string InvProductoNombre)
         {
-            Console.WriteLine("InvProducto= "+idInvProducto);
-            var invProducto = _appContext.InvProductos!.FirstOrDefault(p => p.Id==idInvProducto);
+            Console.WriteLine("InvProductoNombre= "+InvProductoNombre);
+            var invProducto = _appContext.InvProductos!.FirstOrDefault(p => p.INVProductoNombre==InvProductoNombre);
             return invProducto!; 
             
         }

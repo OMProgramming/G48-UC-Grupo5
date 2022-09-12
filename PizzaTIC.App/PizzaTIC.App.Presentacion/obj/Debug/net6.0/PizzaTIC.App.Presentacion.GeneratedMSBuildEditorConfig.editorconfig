@@ -1,0 +1,76 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PizzaTIC.App.Presentacion
+build_property.RootNamespace = PizzaTIC.App.Presentacion
+build_property.ProjectDir = C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Presentacion\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\MisionTIC\PizzaTIC.App\PizzaTIC.App.Presentacion
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Cliente/Cliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZVxDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Cliente/ClienteCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZVxDbGllbnRlQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Cliente/ClienteEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZVxDbGllbnRlRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Cliente/FormaDePago.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZVxGb3JtYURlUGFnby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Inventario/InvLDP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50YXJpb1xJbnZMRFAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Inventario/PizzaCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50YXJpb1xQaXp6YUNyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Inventario/PizzaEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50YXJpb1xQaXp6YUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Inventario/ProdDisponible.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52ZW50YXJpb1xQcm9kRGlzcG9uaWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MisionTIC/PizzaTIC.App/PizzaTIC.App.Presentacion/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-i1qz9r1g60

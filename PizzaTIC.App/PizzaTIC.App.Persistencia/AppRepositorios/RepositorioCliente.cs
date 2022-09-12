@@ -9,16 +9,19 @@ namespace PizzaTIC.App.Persistencia
         ///<summary>
         ///Referencia al Contexto del Cliente
         ///</summary>
-        private readonly AppContext _appContext;
+        private readonly AppContext _appContext = new AppContext();
         ///<summary>
         ///Metodo Constructor Utiliza
         ///Inyección de dependencias para indicar el contexto a utilizar
         ///</summary>
         ///<param name = "appContext"></param>//
+        /*
+        removed this constructor when calling the repository from the persistencia
         public RepositorioCliente(AppContext appContext)
         {
             _appContext = appContext;
         }
+        */
         /*method to Create a Cliente*/
         Cliente IRepositorioCliente.CreateCliente(Cliente cliente)
         {

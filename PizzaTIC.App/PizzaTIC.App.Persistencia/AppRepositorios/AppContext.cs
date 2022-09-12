@@ -40,8 +40,8 @@ namespace PizzaTIC.App.Persistencia
             if (!optionBuilder.IsConfigured)
             {
                 optionBuilder
-                .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = PizzaTICData");
-            } 
+                .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = PizzaTICData;Trusted_Connection=True; MultipleActiveResultSets=True");
+            }
         }
     }
 }

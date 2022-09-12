@@ -1,0 +1,56 @@
+﻿@page
+@model PizzaTIC.App.Presentacion.PizzaEditModel
+@{
+}
+<br />
+<h2 class="text-info">Editar Pizza</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <!--edit feature need to have the id therefore has to be implemented in a hidden format-->
+        <input type="hidden" asp-for="pizza.Id"/>
+        <!--this is to add validadtion to the fields in this page-->
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="pizza.PizzaNombre"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="pizza.PizzaNombre" class="form-control"/>
+            </div> 
+            <!--this presents the message when the data keyed is invalid-->
+            <span asp-validation-for="pizza.PizzaDescripcion" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="pizza.PizzaDescripcion"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="pizza.PizzaDescripcion" class="form-control"/>
+            </div>
+            <span asp-validation-for="pizza.Combo" class="text-danger"></span> 
+            <div class="col-4">
+                <label asp-for="pizza.Combo"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="pizza.Combo" class="form-control"/>
+            </div> 
+            
+            <div class="form-group row">
+                <div class="col-4">
+
+                </div> 
+                <div class="col-3" offset-2>
+                    <input type="submit" value="Editar" class="btn btn-primary form-control"/>
+                </div>  
+                <div class="col-3">
+                    <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                </div> 
+            </div>
+        </div>
+    </form>
+</div>
+<!--to make validation erros visible at client side. It a call to file _ValidationScriptsPartial.cshtml-->
+<!--validation has to be done at server side also (PizzaCreate.cshtml.cs)-->
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

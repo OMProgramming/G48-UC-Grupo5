@@ -1,0 +1,103 @@
+﻿@page
+@model PizzaTIC.App.Presentacion.ClienteCreateModel
+@{
+}
+<br />
+<h2 class="text-info">Crear Un Nuevo Cliente</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <!--this is to add validadtion to the fields in this page-->
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="cliente.UserName"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.UserName" class="form-control"/>
+            </div> 
+            <!--this presents the message when the data keyed is invalid-->
+            <span asp-validation-for="cliente.UserName" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Password"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Password" class="form-control"/>
+            </div>
+            <span asp-validation-for="cliente.Password" class="text-danger"></span> 
+            <div class="col-4">
+                <label asp-for="cliente.Nombres"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Nombres" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Nombres" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Apellidos"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Apellidos" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Apellidos" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Direccion"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Direccion" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Direccion" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Ciudad"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Ciudad" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Ciudad" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Departamento"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Departamento" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Departamento" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Pais"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Pais" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Pais" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Telefono"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Telefono" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Telefono" class="text-danger"></span>
+            <div class="col-4">
+                <label asp-for="cliente.Email"></label>
+            </div>  
+            <div class="col-6">
+                <input asp-for="cliente.Email" class="form-control"/>
+            </div> 
+            <span asp-validation-for="cliente.Email" class="text-danger"></span>
+            <div class="form-group row">
+                <div class="col-4">
+
+                </div> 
+                <div class="col-3" offset-2>
+                    <input type="submit" value="Crear" class="btn btn-primary form-control"/>
+                </div>  
+                <div class="col-3">
+                    <a asp-page="Cliente" class="btn btn-success form-control">Regrese a la Lista de Clientes</a>
+                </div> 
+            </div>
+        </div>
+    </form>
+</div>
+<!--to make validation erros visible at client side. It a call to file _ValidationScriptsPartial.cshtml-->
+<!--validation has to be done at server side also (ClienteCreate.cshtml.cs)-->
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

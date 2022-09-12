@@ -1,0 +1,110 @@
+﻿@page
+@model PizzaTIC.App.Presentacion.ClienteModel
+@{
+}
+
+<br />
+<div class="container row p-0 m-0">
+    <!--bootstrap divides a row into 12 equals columns
+        this div is creating 1 row into 2 columns 9 and 3 -->
+    <div class="col-9">
+        <h2 class="text-info">Lista de Clientes</h2>
+    </div>
+    <div class="col-3">
+        <!--redirects to razor page named "ClienteCreate" when button is pressed-->
+        <a asp-page="ClienteCreate"class="btn btn-info form-control text-white">Crear un Cliente Nuevo</a>
+    </div>
+
+    <div class="col-12 border p-3 mt-3">
+        <form method="post">
+            @if (Model.Clientes.Count() > 0)
+            {
+                <table class="table table-striped border p-3 mt-3">
+                    <tr class="table-secondary">
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().UserName"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Password"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Nombres"></label>
+                        </th>
+                        <th><!--html helper-->
+                            @Html.DisplayNameFor(m=>m.Clientes.FirstOrDefault().Apellidos)
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Direccion"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Ciudad"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Departamento"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Pais"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Telefono"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="Clientes.FirstOrDefault().Email"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label>Editar o Borrar</label>
+                        </th>
+                        
+                    </tr>
+                    @foreach(var item in Model.Clientes)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(m=>item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Nombres)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Apellidos)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Direccion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Ciudad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Departamento)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Pais)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Telefono)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Email)
+                            </td>
+                            
+                            <td>
+                                <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                                <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Esta seguro de Borrar este Cliente?')" class="btn btn-danger btn-sm">Borrar</button>
+                                <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                <a asp-page="ClienteEdit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Editar</a>
+                            </td>
+                            
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <p>No hay Clientes en La Base de Datos</p>
+            }
+        </form>
+    </div>
+</div>
