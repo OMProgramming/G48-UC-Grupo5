@@ -10,6 +10,7 @@ namespace PizzaTIC.App.Persistencia
         public DbSet<BebidaCaliente>? BebidasCalientes { get; set; } /*property BebidaCaliente in Domonio*/
         public DbSet<CarritoDeCompra>? CarritosDeCompras { get; set; } /*property CarritoDeCompra in Domonio*/
         public DbSet<Cliente>? Clientes { get; set; } /*property Cliente in Domonio*/
+        public DbSet<Combo>? Combo { get; set; } /*property Combo in Domonio*/
         public DbSet<ComidaTamano>? ComidaTamanos { get; set; } /*property ComidaTamano in Domonio*/
         public DbSet<Envio>? Envios { get; set; } /*property Envio in Domonio*/
         public DbSet<Especificacion>? Especificaciones { get; set; } /*property Especificacion in Domonio*/

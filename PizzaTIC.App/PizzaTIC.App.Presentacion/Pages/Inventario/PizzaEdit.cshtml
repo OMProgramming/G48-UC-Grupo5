@@ -1,6 +1,8 @@
 ﻿@page
 @model PizzaTIC.App.Presentacion.PizzaEditModel
 @{
+    int pizzaId = Model.pizza.Id;
+    int ingredienteId = 0;
 }
 <br />
 <h2 class="text-info">Editar Pizza</h2>
@@ -13,39 +15,335 @@
         <!--this is to add validadtion to the fields in this page-->
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row">
-            <div class="col-4">
-                <label asp-for="pizza.PizzaNombre"></label>
-            </div>  
-            <div class="col-6">
-                <input asp-for="pizza.PizzaNombre" class="form-control"/>
-            </div> 
-            <!--this presents the message when the data keyed is invalid-->
-            <span asp-validation-for="pizza.PizzaDescripcion" class="text-danger"></span>
-            <div class="col-4">
-                <label asp-for="pizza.PizzaDescripcion"></label>
-            </div>  
-            <div class="col-6">
-                <input asp-for="pizza.PizzaDescripcion" class="form-control"/>
+            <div class="border container" style="padding:30px;">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="pizza.PizzaNombre"></label>
+                    </div>  
+                    <div class="col-6">
+                        <input asp-for="pizza.PizzaNombre" class="form-control"/>
+                    </div> 
+                    <!--this presents the message when the data keyed is invalid-->
+                    <span asp-validation-for="pizza.PizzaDescripcion" class="text-danger"></span>
+                    <div class="col-4">
+                        <label asp-for="pizza.PizzaDescripcion"></label>
+                    </div>  
+                    <div class="col-6">
+                        <input asp-for="pizza.PizzaDescripcion" class="form-control"/>
+                    </div>
+                    <span asp-validation-for="pizza.Combo" class="text-danger"></span> 
+                    <div class="col-4">
+                        <label asp-for="pizza.Combo"></label>
+                    </div>  
+                    <div class="col-6">
+                        <input asp-for="pizza.Combo" class="form-control"/>
+                    </div> 
+                    <!--Control buttons for Pizzas Table-->
+                    <div class="form-group row">
+                        <div class="col-4">
+                    </div> 
+                        <div class="col-3" offset-2>
+                            <!--<input type="submit" asp-route-name="Pizza" value="Editar Pizza" class="btn btn-primary form-control"/>-->
+                            <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                            <button asp-page-handler="EditPizza" asp-route-name="Pizza" onclick="return confirm('Esta seguro de Editar esta Pizza?')" class="btn btn-primary form-control">Editar Pizza</button>
+                        </div>  
+                        <div class="col-3">
+                            <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                        </div> 
+                    </div>
+                </div>
             </div>
-            <span asp-validation-for="pizza.Combo" class="text-danger"></span> 
-            <div class="col-4">
-                <label asp-for="pizza.Combo"></label>
-            </div>  
-            <div class="col-6">
-                <input asp-for="pizza.Combo" class="form-control"/>
-            </div> 
-            
-            <div class="form-group row">
-                <div class="col-4">
 
+            <!--List of Ingredientes in table Ingredientes-->
+            <div class="border container" style="padding:30px;">
+                <div class="form-group row">
+                    @if (Model.listIngredientesPizza.Count()>0)
+                    {
+                        @foreach (var item in Model.listIngredientesPizza)
+                        {  
+                            <span asp-validation-for="@item.NombreIngrediente" class="text-danger"></span> 
+                            <div class="col-4">
+                                <label asp-for="@item.NombreIngrediente"></label>
+                            </div> 
+                            <div class="col-6">
+                                <input asp-for="@item.NombreIngrediente" class="form-control"/>
+                            </div> 
+                            <span asp-validation-for="@item.TipoIngrediente" class="text-danger"></span> 
+                            <div class="col-4">
+                                <label asp-for="@item.TipoIngrediente"></label>
+                            </div> 
+                            <div class="col-6">
+                                <input asp-for="@item.TipoIngrediente" class="form-control"/>
+                            </div>    
+                            <span asp-validation-for="@item.Calorias" class="text-danger"></span> 
+                            <div class="col-4">
+                                <label asp-for="@item.Calorias"></label>
+                            </div> 
+                            <div class="col-6">
+                                <input asp-for="@item.Calorias" class="form-control"/>
+                            </div>
+                            <span asp-validation-for="@item.Id" class="text-danger"></span> 
+                            <div class="col-4">
+                                <label>IngredienteId</label>
+                            </div> 
+                            <div class="col-6">
+                                <input asp-for="@item.Id" class="form-control"/>
+                            </div>  
+                            
+                        }
+                    }
+                    <div class="form-group row">
+                        <div class="col-4">
+
+                        </div> 
+                        <div class="col-3" offset-2>
+                            <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                            <!--<button asp-page-handler="EditIngrediente" asp-route-id="@pizzaId" onclick="return confirm('Esta seguro de Editar el Ingrediente?')" class="btn btn-primary form-control">Editar Ingredientes</button>-->
+                            <a asp-page="EditIngrediente" asp-route-id="@pizzaId" class="btn btn-success form-control">Editar Ingredientes</a>
+                        </div>
+                        <div class="col-3">
+                            <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                            <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-4">
+
+                        </div> 
+                        <div class="col-3" offset-2>
+                            <label>   Adicione un Ingrediente</label>    
+                        </div>
+                        <div class="col-3">
+                            <label>De la Lista Abajo</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                        </div> 
+                        <div class="col-3" offset-2>
+                            <label></label>
+                        </div>
+                        <div class="col-3">
+                            <select name="newIngrediente" asp-page-handler="AddIngrediente" class="from-control input-lg" onchange="this.form.submit()"><!--name="newIngrediente" must correspond to quest.Form["newIngrediente"] in PizzaEdit.cshtml.cs-->
+                                <option value="0">Seleccione un Ingrediente</option>
+                                @foreach (var ingred in Model.ingredientesNotInPizza)
+                                {   
+                                    if (Model.selectedIngrediente==@ingred.NombreIngrediente)
+                                    {   <!--Optains the NombreIngrediente name and shows that NombreIngrediente name in the dropdown menu/button-->              
+                                        <option value="@ingred.NombreIngrediente" selected>@ingred.NombreIngrediente</option>
+                                    }     
+                                    else
+                                    {
+                                        <option value="@ingred.NombreIngrediente">@ingred.NombreIngrediente</option>
+                                    }
+                                }
+                            </select>
+                            <!--<input type="submit" asp-page-handler="CreateIngrediente" value="Adicionar Ingrediente" class="btn btn-primary form-control"/>-->
+                        </div>
+                    </div>
+                    @if (Model.newIngredienteToAdd.Id>0)
+                    {
+                        <span asp-validation-for="@Model.newIngredienteToAdd.NombreIngrediente" class="text-danger"></span> 
+                        <div class="col-4">
+                            <label asp-for="@Model.newIngredienteToAdd.NombreIngrediente"></label>
+                        </div> 
+                        <div class="col-6">
+                            <input asp-for="@Model.newIngredienteToAdd.NombreIngrediente" class="form-control"/>
+                        </div> 
+                        <span asp-validation-for="@Model.newIngredienteToAdd.TipoIngrediente" class="text-danger"></span> 
+                        <div class="col-4">
+                            <label asp-for="@Model.newIngredienteToAdd.TipoIngrediente"></label>
+                        </div> 
+                        <div class="col-6">
+                            <input asp-for="@Model.newIngredienteToAdd.TipoIngrediente" class="form-control"/>
+                        </div>    
+                        <span asp-validation-for="@Model.newIngredienteToAdd.Calorias" class="text-danger"></span> 
+                        <div class="col-4">
+                            <label asp-for="@Model.newIngredienteToAdd.Calorias"></label>
+                        </div> 
+                        <div class="col-6">
+                            <input asp-for="@Model.newIngredienteToAdd.Calorias" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="@Model.newIngredienteToAdd.Id" class="text-danger"></span> 
+                        <div class="col-4">
+                            <label>IngredienteId</label>
+                        </div> 
+                        <div class="col-6">
+                            <input asp-for="@Model.newIngredienteToAdd.Id" class="form-control"/>
+                        </div>  
+                        <div class="form-group row">
+                            <div class="col-4">
+                            </div> 
+                            <div class="col-3" offset-2>
+                                <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                                <button asp-page-handler="AddIngrediente" asp-route-id="@Model.newIngredienteToAdd.Id" onclick="return confirm('Esta seguro de Addicionar el Ingrediente?')" class="btn btn-primary form-control">Addicionar Ingrediente</button>
+                            </div>
+                            <div class="col-3">
+                                <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                            </div>
+                        </div>
+                    }
                 </div> 
-                <div class="col-3" offset-2>
-                    <input type="submit" value="Editar" class="btn btn-primary form-control"/>
-                </div>  
-                <div class="col-3">
-                    <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
-                </div> 
+            </div> 
+
+
+            <!--Columns from Table ComidaTamanos-->
+            <div class="border container" style="padding:30px;">
+                <div class="form-group row">   
+                        <span asp-validation-for="comidaTamano.ComidaTamanoNombre" class="text-danger"></span>
+                        <div class="col-4">
+                            <label asp-for="comidaTamano.ComidaTamanoNombre"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.ComidaTamanoNombre" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="comidaTamano.NumeroIngredientes" class="text-danger"></span>
+                        <div class="col-4">
+                            <label asp-for="comidaTamano.NumeroIngredientes"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.NumeroIngredientes" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="comidaTamano.PrecioUnitario" class="text-danger"></span>
+                        <div class="col-4">
+                            <label asp-for="comidaTamano.PrecioUnitario"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.PrecioUnitario" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="comidaTamano.Peso" class="text-danger"></span>
+                        <div class="col-4">
+                        <label asp-for="comidaTamano.Peso"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.Peso" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="comidaTamano.Ancho" class="text-danger"></span>
+                        <div class="col-4">
+                        <label asp-for="comidaTamano.Ancho"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.Ancho" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="comidaTamano.Largo" class="text-danger"></span>
+                        <div class="col-4">
+                        <label asp-for="comidaTamano.Largo"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.Largo" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="comidaTamano.Alto" class="text-danger"></span>
+                        <div class="col-4">
+                        <label asp-for="comidaTamano.Alto"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.Alto" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="comidaTamano.TipoEmpaque" class="text-danger"></span>
+                        <div class="col-4">
+                        <label asp-for="comidaTamano.TipoEmpaque"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.TipoEmpaque" class="form-control"/>
+                        </div>
+                    @if (Model.comidaTamanoId>0)
+                    {   
+                        <span asp-validation-for="comidaTamano.Id" class="text-danger"></span>
+                        <div class="col-4">
+                            <label>ComidaTamanoId</label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="comidaTamano.Id" class="form-control"/>
+                        </div>       
+                        <div class="form-group row">
+                            <div class="col-4">
+                            </div> 
+                            <div class="col-3" offset-2>
+                                <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                                <button asp-page-handler="EditTamano" asp-route-id="@Model.comidaTamanoId" onclick="return confirm('Esta seguro de Editar el Tamaño?')" class="btn btn-primary form-control">Editar Tamaño</button>
+                            </div>
+                            <div class="col-3">
+                                <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group row">
+                            <div class="col-4">
+                            </div> 
+                            <div class="col-3" offset-2>
+                                <input type="submit" asp-page-handler="CreateTamano" value="Crear Tamaño" class="btn btn-primary form-control"/>
+                            </div>
+                            <div class="col-3">
+                                <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
+
+            <!--Columns from Table Combos-->
+
+            <div class="border container" style="padding:30px;">
+                <div class="form-group row">       
+                        <span asp-validation-for="combo.ComboNombre" class="text-danger"></span>
+                        <div class="col-4">
+                            <label asp-for="combo.ComboNombre"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="combo.ComboNombre" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="combo.ComboDescripcion" class="text-danger"></span>
+                        <div class="col-4">
+                            <label asp-for="combo.ComboDescripcion"></label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="combo.ComboDescripcion" class="form-control"/>
+                        </div>
+                    @if (Model.comboId>0)
+                    {
+                        <span asp-validation-for="combo.Id" class="text-danger"></span>
+                        <div class="col-4">
+                            <label>ComboId</label>
+                        </div>  
+                        <div class="col-6">
+                        <input asp-for="combo.Id" class="form-control"/>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+                            </div> 
+                            <div class="col-3" offset-2>
+                                <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                                <button asp-page-handler="EditCombo" asp-route-id="@Model.comboId" onclick="return confirm('Esta seguro de Editar el Combo?')" class="btn btn-primary form-control">Editar Combo</button>
+                            </div>
+                            <div class="col-3">
+                                <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group row">
+                            <div class="col-4">
+                            </div> 
+                            <div class="col-3" offset-2>
+                                <input type="submit" asp-page-handler="CreateCombo" value="Crear Combo" class="btn btn-primary form-control"/>
+                            </div>
+                            <div class="col-3">
+                                <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese a la Lista de Pizzas</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>    
+
         </div>
     </form>
 </div>

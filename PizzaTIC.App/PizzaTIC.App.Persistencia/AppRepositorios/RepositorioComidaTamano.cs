@@ -9,16 +9,18 @@ namespace PizzaTIC.App.Persistencia
         ///<summary>
         ///Referencia al Contexto de ComidaTamano
         ///</summary>
-        private readonly AppContext _appContext;
+        private readonly AppContext _appContext = new AppContext();
         ///<summary>
         ///Metodo Constructor Utiliza
         ///Inyección de dependencias para indicar el contexto a utilizar
         ///</summary>
         ///<param name = "appContext"></param>//
+        /*
         public RepositorioComidaTamano(AppContext appContext)
         {
             _appContext = appContext;
         }
+        */
         /*method to Create a ComidaTamano*/
         ComidaTamano IRepositorioComidaTamano.CreateComidaTamano(ComidaTamano comidaTamano)
         {
@@ -42,6 +44,7 @@ namespace PizzaTIC.App.Persistencia
         /*method to Update ComidaTamano*/
         ComidaTamano IRepositorioComidaTamano.UpdateComidaTamano(ComidaTamano comidaTamano)
         {
+            Console.WriteLine("ComidaTamano.Id= "+comidaTamano.Id);
             var comidaTamanoEncontrado = _appContext.ComidaTamanos!.FirstOrDefault(p => p.Id==comidaTamano.Id);
             if (comidaTamanoEncontrado != null)
             {

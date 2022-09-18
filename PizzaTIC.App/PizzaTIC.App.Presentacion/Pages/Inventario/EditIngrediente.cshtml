@@ -1,0 +1,131 @@
+﻿@page
+@model PizzaTIC.App.Presentacion.EditIngredienteModel
+@{
+    ViewData["Title"] = "Ingredientes";
+}
+<h1>@ViewData["Title"]</h1>
+<br/>
+<div class="col-9">
+        <h2 class="text-info">Ingredientes en Pizza Seleccionada</h2>
+</div>
+@foreach (var ingrePizza in Model.listIngre_Pizza)
+{
+<div class="border container" style="padding:30px;">
+    
+    <form method="post">
+        <!--edit feature need to have the id therefore has to be implemented in a hidden format-->
+        <!--<input type="hidden" asp-for="pizza.Id"/>-->
+        <!--this is to add validadtion to the fields in this page-->
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <span asp-validation-for="@ingrePizza.NombreIngrediente" class="text-danger"></span> 
+            <div class="col-4">
+                <label asp-for="@ingrePizza.NombreIngrediente"></label>
+            </div> 
+            <div class="col-6">
+                <input asp-for="@ingrePizza.NombreIngrediente" class="form-control"/>
+            </div> 
+            <span asp-validation-for="@ingrePizza.TipoIngrediente" class="text-danger"></span> 
+            <div class="col-4">
+                <label asp-for="@ingrePizza.TipoIngrediente"></label>
+            </div> 
+            <div class="col-6">
+                <input asp-for="@ingrePizza.TipoIngrediente" class="form-control"/>
+            </div>    
+            <span asp-validation-for="@ingrePizza.Calorias" class="text-danger"></span> 
+            <div class="col-4">
+                <label asp-for="@ingrePizza.Calorias"></label>
+            </div> 
+            <div class="col-6">
+                <input asp-for="@ingrePizza.Calorias" class="form-control"/>
+            </div>
+            
+
+            <div class="form-group row">
+                <div class="col-4">
+
+                </div> 
+                <div class="col-3" offset-2>
+                    <!--<input type="submit" asp-page-handler="EditIngrediente" value="Editar Ingrediente" class="btn btn-primary form-control"/>-->
+                    <button asp-page-handler="EditIngrediente" asp-route-id="@ingrePizza.Id" onclick="return confirm('Esta seguro de Editar esta Pizza?')" class="btn btn-primary form-control">Editar Ingrediente</button>
+                </div>
+                <div class="col-3">
+                    <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                    <a asp-page="ProdDisponible" asp-route-name="Pizza" class="btn btn-success form-control">Regrese Editar Pizza</a>
+                </div>
+            </div>
+        </div> 
+    
+    </form>
+</div>
+}
+
+<div class="container row p-0 m-0">
+    <!--bootstrap divides a row into 12 equals columns
+        this div is creating 1 row into 2 columns 9 and 3 -->
+    <div class="col-9">
+        <h2 class="text-info">Lista de Todos los Ingredientes Disponibles</h2>
+    </div>
+    <div class="col-3">
+        <!--redirects to razor page named "CreateIngrediente" when button is pressed-->
+        <a asp-page="IngredienteCreate"class="btn btn-info form-control text-white">Crear un Ingrediente Nuevo</a>
+    </div>    
+    <div class="col-12 border p-3 mt-3">
+        <form method="post">
+            @if (Model.listIngredientes.Count() > 0)
+            {
+                <table class="table table-striped border p-3 mt-3">
+                    <tr class="table-secondary">
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="listIngredientes.FirstOrDefault().NombreIngrediente"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="listIngredientes.FirstOrDefault().TipoIngrediente"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label asp-for="listIngredientes.FirstOrDefault().Calorias"></label>
+                        </th>
+                        <th><!--tag helper asp-for-->
+                            <label>Borrar o Editar</label>
+                        </th> 
+
+                    </tr>
+                    @foreach(var item in Model.listIngredientes)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(m=>item.NombreIngrediente)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.TipoIngrediente)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m=>item.Calorias)
+                            </td>
+                            
+                            <td>
+                                <!--has a onklick method to display a confirm box-window & a page-handler diferent of post or get. And a reroute parameter-->
+                                <button asp-page-handler="Delete" asp-route-id="@item.Id" onclick="return confirm('Esta seguro de Borrar este Ingrediente?')" class="btn btn-danger btn-sm">Borrar</button>
+                                <!--will redirect to page ClienteEdit and use a parameter item.Id-->
+                                <a asp-page-handler="SelectedIngrediente" asp-route-ingredienteId="@item.Id" class="btn btn-success btn-sm text-white">Editar</a>
+                            </td>
+                            
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <p>No hay Datos en La Base de Datos</p>
+            }
+        </form>
+    </div>
+</div>
+
+
+
+<!--to make validation erros visible at client side. It a call to file _ValidationScriptsPartial.cshtml-->
+<!--validation has to be done at server side also (PizzaCreate.cshtml.cs)-->
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

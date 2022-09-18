@@ -41,6 +41,7 @@ namespace PizzaTIC.App.Persistencia
         {
             return _appContext.Pizzas!;
         }
+
         /*method to Update Pizza*/
         Pizza IRepositorioPizza.UpdatePizza(Pizza pizza)
         {
