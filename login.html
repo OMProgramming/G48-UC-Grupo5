@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+        <link href="login.css" rel="stylesheet">
+        <link rel="icon" type="image.png" href="img/login.png">
+    </head>
+    <body>
+    <div class="menu">
+        <nav>
+            <img class="logo" src="img/Logo.png">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="comidas.html">Comidas</a></li>
+                <li><a href="acompañantes.html">Acompañantes</a></li>
+                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="postres.html">Postres</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section>
+            <div class="container">
+                <div class="Login-Registro">
+                    <div class="interior" id="tarjeta">
+                        <div class="frontal">
+                            <h2>Login</h2>
+                            <form>
+                                <input type="text" class="input-box" placeholder="Ingresa Tu Usuario" required>
+                                <br>
+                                <br>
+                                <input type="password" class="input-box" placeholder="Ingresa Tu Contraseña" required>
+                                <button type="submit" class="btn-ingresar">Ingresar</button>                         
+                                <br>
+                                <input type="checkbox" class="check"><span>Recordar Mis Datos</span>
+                            </form>
+                            <p>Si no tienes una cuenta haz click aqui para Registrarte</p>
+                            <button type="button" class="btn" onclick="openRegistrarme()">Registrarme</button>
+                        </div>
+                        <div class="posterior">
+                            <h2>Registrarme</h2>
+                            <form>
+                                <input type="text" class="input-box" placeholder="Ingresa Tu Usuario" required>
+                                <br>
+                                <input type="password" class="input-box" placeholder="Ingresa Tu Contraseña" required>
+                                <br>                                
+                                <input type="text" class="input-box" placeholder="Ingresa Tu Primer Nombre" required>
+                                <br>
+                                <input type="text" class="input-box" placeholder="Ingresa Tu Primer Apellido" required>
+                                <br>
+                                <input type="number" class="input-box" placeholder="Ingresa Tu Documento" min="4" max="100" required>
+                                <br>
+                                <input type="text" class="input-box" placeholder="Ingresa Tu Ciudad" required>
+                                <br>
+                                <input type="number" class="input-box" placeholder="Ingresa Tu Número de Teléfono" min="4" max="100" required>
+                                <br>
+                                <input type="email" class="input-box" placeholder="Ingresa Tu Correo" required>
+                                <button type="submit" class="btn-ingresar">Registrarme</button>
+                            </form>
+                            <p class="parrafo">¡Ya tengo una cuenta!</p>
+                            <button type="button" class="btn" onclick="openLogin()">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var tarjeta = document.getElementById("tarjeta");
+                function openRegistrarme(){
+                    tarjeta.style.transform = "rotateY(-180deg)"
+                }
+                function openLogin(){
+                    tarjeta.style.transform = "rotateY(0deg)"
+                }
+            </script>
+        </section> 
+    </main>               
+    </body>
+</html>
