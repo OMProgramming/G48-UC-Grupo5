@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Pago-Envio.css">
+    <title>Pago</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <form action="">
+                <div class="fila">
+                    <div class="columna">
+                       
+                        <h4 class="titulo">Datos de Envío</h4>
+                                                
+                        <div class="caja">
+                            <span>Primer Nombre *</span>
+                            <input type="text" placeholder="Frailejón" required>
+                        </div>
+                        <div class="caja">
+                            <span>Primer Apellido *</span>
+                            <input type="text" placeholder="Perez" required>
+                        </div>
+                        <div class="caja">
+                            <span>E-mail *</span>
+                            <input type="email" placeholder="fraile@ejemplo.com" required>
+                        </div>
+                        <div class="caja">
+                            <span>Dirección *</span>
+                            <input type="text" placeholder="Av Busque Calle Encuentre" required>
+                        </div>
+                        <div class="caja">
+                            <span>Ciudad *</span>
+                            <input type="text" placeholder="Bogotá D.C." required>
+                        </div>
+                        <div class="caja">
+                            <span>Pais *</span>
+                            <input type="text" placeholder="Colombia" required>
+                        </div>
+                        <div class="caja">
+                            <span>Número Celular *</span>
+                            <input type="text" placeholder="3121234567" required minlength="0" maxlength="10">
+                        </div>
+                    </div>
+                    
+                    <div class="columna">
+                       
+                        <h4 class="titulo">Pago</h4>
+                        
+                        <div class="caja">
+                            <span>Recibimos:</span>
+                            <img src="/pago.jpg">
+                        </div>
+                        <div class="caja">
+                            <span>Nombre De La Tarjeta *</span>
+                            <input type="text" placeholder="Frailejon Perez" required>
+                        </div>
+                        <div class="caja">
+                            <span>Número De La Tarjeta *</span>
+                            <input type="number" placeholder="1234-5678-9098-7654" required>
+                        </div>
+                        <div class="caja">
+                            <span>CVC *</span>
+                            <input type="password" placeholder="***" required minlength="0" maxlength="3">
+                        </div>
+                        <div class="caja">
+                            <span>Clave *</span>
+                            <input type="password" placeholder="****" required minlength="0" maxlength="4">
+                        </div>
+                        <div class="caja">
+                            <span>Fecha De Vencimiento *</span>
+                            <input type="date" value="2018-01-01" required min="2018-01-01" max="2028-12-31">
+                        </div>
+                        <div class="caja">
+                            <span>Cuotas *</span>
+                            <input type="number" placeholder="0" required min="0" max="10">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Procesar Pago" class="btn-pago" required>
+            </form>            
+        </div>
+    </main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
